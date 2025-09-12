@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
-
-{
+let
+#  nvf = import (builtins.fetchTarball {
+#    url = "https://github.com/notashelf/nvf/archive/<commit or tag>.tar.gz";
+#  });
+in {
   home.username = "jonas";
   home.homeDirectory = "/home/jonas";
   home.stateVersion = "25.05";
@@ -9,7 +12,7 @@
     enable = true;
     shellAliases = {
       btw = "echo I use NixOs btw";
-      nrs = "sudo nix-rebuild switch -I nixos-config=/home/jonas/jonas-nixos-config/nixos/configuration.nix";
+      nrs = "sudo nixos-rebuild switch -I nixos-config=/home/jonas/jonas-nixos-config/nixos/configuration.nix";
     };
   };
 
