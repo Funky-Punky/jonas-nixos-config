@@ -9,7 +9,7 @@
     enable = true;
     shellAliases = {
       btw = "echo I use NixOs btw";
-      nrs = "sudo nix-rebuild switch -I nixos-config=/home/jonas/jonas-nixos-config/nixos/configuration.nix"
+      nrs = "sudo nix-rebuild switch -I nixos-config=/home/jonas/jonas-nixos-config/nixos/configuration.nix";
     };
   };
 
