@@ -9,7 +9,7 @@ in
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
       ./desktop-audio.nix
       (import "${home-manager}/nixos")
     ];

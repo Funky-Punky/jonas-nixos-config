@@ -9,6 +9,7 @@
     enable = true;
     shellAliases = {
       btw = "echo I use NixOs btw";
+      nrs = "sudo nix-rebuild switch -I nixos-config=/home/jonas/jonas-nixos-config/nixos/configuration.nix"
     };
   };
 
@@ -45,10 +46,10 @@
     ];
   };
 
-  programs.nixvim = {
-    enable = true;
-
-    colorschemes.catppuccin.enable = true;
-    plugins.lualine.enable = true;
-  };
+#  programs.nixvim = {
+#    enable = true;
+#
+#    colorschemes.catppuccin.enable = true;
+#    plugins.lualine.enable = true;
+#  };
 }
