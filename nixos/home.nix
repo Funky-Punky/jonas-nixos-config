@@ -1,9 +1,13 @@
 { config, pkgs, ... }:
 let
 #  nvf = import (builtins.fetchTarball {
-#    url = "https://github.com/notashelf/nvf/archive/<commit or tag>.tar.gz";
+#    url = "https://github.com/notashelf/nvf/archive/v0.7.tar.gz";
 #  });
 in {
+  #imports = [
+  #  nvf.homeManagerModules.nvf
+  #];
+
   home.username = "jonas";
   home.homeDirectory = "/home/jonas";
   home.stateVersion = "25.05";
@@ -28,6 +32,19 @@ in {
     userName = "Honas";
     userEmail = "jonas.reinstaedtler@web.de";
   };
+
+#  programs.nvf = {
+#    enable = true;
+    # your settings need to go into the settings attribute set
+    # most settings are documented in the appendix
+    #settings = {
+    #  vim.viAlias = false;
+    #  vim.vimAlias = true;
+    #  vim.lsp = {
+    #    enable = true;
+    #  };
+    #};
+#  };
 
   programs.neovim = {
     enable = true;
