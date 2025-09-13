@@ -2,16 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ input, lib, config, pkgs, ... }:
-let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz";
-in
+{ input, lib, inputs, config, pkgs, ... }:
 {
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
       ./desktop-audio.nix
-      (import "${home-manager}/nixos")
+      inputs.home-manager.nixosModules.default
     ];
 
   home-manager.useUserPackages = true;
