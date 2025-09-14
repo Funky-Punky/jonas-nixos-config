@@ -8,13 +8,13 @@
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
       ./desktop-audio.nix
-      inputs.home-manager.nixosModules.default
+      #inputs.home-manager.nixosModules.default
     ];
 
-  home-manager.useUserPackages = true;
-  home-manager.useGlobalPkgs = true;
-  home-manager.backupFileExtension = "backup";
-  home-manager.users.jonas = import ./home.nix;
+  #home-manager.useUserPackages = true;
+  #home-manager.useGlobalPkgs = true;
+  #home-manager.backupFileExtension = "backup";
+  #home-manager.users.jonas = import ./home.nix;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -72,10 +72,6 @@
     isNormalUser = true;
     description = "jonas";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
-    packages = with pkgs; [
-      tree
-    ];
-  
   };
 
   # Allow unfree packages
@@ -103,19 +99,15 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
-    netfetch
+    neofetch
     alacritty
     kitty
     rofi
     kdePackages.dolphin
     helvum
-    neofetch
     pulseaudio
-    ladspaPlugins
-    ladspa-sdk
     spotify
     discord
-    chromium
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
