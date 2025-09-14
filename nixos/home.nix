@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   imports = [
     inputs.nvf.homeManagerModules.default
@@ -23,67 +28,55 @@
     };
   };
 
-  programs.git = {
-    enable = true;
-    userName = "Honas";
-    userEmail = "jonas.reinstaedtler@web.de";
-  };
+  programs.git.enable = true;
+  programs.git.userName = "Honas";
+  programs.git.userEmail = "jonas.reinstaedtler@web.de";
 
   programs.nvf = {
     enable = true;
     settings = {
-      vim = {
-        viAlias = false;
-        vimAlias = true;
 
-        options.shiftwidth = 2;
-        #options.cursorlineopt = "both";
+      vim.viAlias = false;
+      vim.vimAlias = true;
 
-        visuals.nvim-cursorline.enable = true;
+      vim.options.shiftwidth = 2;
+      # visuals.nvim-cursorline.enable = true;
+      # options.cursorlineopt = "both";
 
-        theme = {
-          enable = true;
-          name = "gruvbox";
-          style = "dark";
-        };
+      vim.diagnostics.config.virtual_text = true;
+      vim.diagnostics.config.virtual_lines = true;
 
-        statusline.lualine.enable = true;
-        autocomplete.nvim-cmp.enable = true;
-
-        lsp = {
-          enable = true;
-        };
-
-        languages = {
-          enableLSP = true;
-          enableTreesitter = true;
-
-          nix.enable = true;
-          rust.enable = true;
-          rust.crates.enable = true;
-        };
+      vim.theme = {
+        enable = true;
+        name = "gruvbox";
+        style = "dark";
       };
+
+      vim.statusline.lualine.enable = true;
+      vim.autocomplete.nvim-cmp.enable = true;
+
+      vim.lsp = {
+        enable = true;
+        lspkind.enable = true;
+        lspsaga.enable = true;
+        trouble.enable = true;
+        otter-nvim.enable = true;
+      };
+
+      vim.languages = {
+        enableTreesitter = true;
+
+        nix.enable = true;
+        rust.enable = true;
+        rust.crates.enable = true;
+      };
+
+      vim.spellcheck = {
+        enable = true;
+        programmingWordlist.enable = true;
+      };
+
     };
   };
-
-  #programs.neovim = {
-  #  enable = false;
-  #  defaultEditor = true;
-  #  viAlias = false;
-  #  vimAlias = true;
-  #  extraLuaConfig = ''
-  #    vim.opt.number = true
-  #    vim.opt.cursorline = true
-  #    vim.opt.relativenumber = true
-  #    vim.opt.shiftwidth = 2
-  #    vim.cmd.colorscheme "tokyonight-storm"
-  #  '';
-  #  coc.enable = true;
-  #  plugins = with pkgs.vimPlugins; [
-  #    nvim-treesitter.withAllGrammars
-  #    vim-nix
-  #    tokyonight-nvim
-  #  ];
-  #};
 
 }
