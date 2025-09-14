@@ -7,6 +7,7 @@
 {
   imports = [
     inputs.nvf.homeManagerModules.default
+    inputs.spicetify-nix.homeManagerModules.default
   ];
 
   home.username = "jonas";
@@ -17,7 +18,10 @@
     enable = true;
     shellAliases = {
       btw = "echo I use NixOs btw";
-      nrs = "sudo nixos-rebuild switch -I nixos-config=/home/jonas/jonas-nixos-config/nixos/configuration.nix";
+      nrs = "sudo nixos-rebuild switch --flake /home/jonas/jonas-nixos-config/nixos --impure";
+    };
+    sessionVariables = {
+      EDITOR = "vim";
     };
   };
 
@@ -91,7 +95,18 @@
         }
       ];
     };
-
   };
+
+
+  programs.spicetify =
+    let
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+    in
+    {
+      enable = true;
+      enabledExtensions = with spicePkgs.extensions; [
+        adblock
+      ];
+    };
 
 }
