@@ -8,7 +8,6 @@
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
       ./desktop-audio.nix
-      #inputs.home-manager.nixosModules.default
     ];
 
   #home-manager.useUserPackages = true;

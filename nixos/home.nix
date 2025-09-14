@@ -31,17 +31,37 @@
 
   programs.nvf = {
     enable = true;
-    # your settings need to go into the settings attribute set
-    # most settings are documented in the appendix
     settings = {
-      vim.viAlias = false;
-      vim.vimAlias = true;
-      vim.theme.enable = true;
-      vim.theme.name = "gruvbox";
-      vim.theme.style = "dark";
-      vim.statusline.lualine.enable = true;
-      vim.lsp = {
-        enable = true;
+      vim = {
+        viAlias = false;
+        vimAlias = true;
+
+        options.shiftwidth = 2;
+        #options.cursorlineopt = "both";
+
+        visuals.nvim-cursorline.enable = true;
+
+        theme = {
+          enable = true;
+          name = "gruvbox";
+          style = "dark";
+        };
+
+        statusline.lualine.enable = true;
+        autocomplete.nvim-cmp.enable = true;
+
+        lsp = {
+          enable = true;
+        };
+
+        languages = {
+          enableLSP = true;
+          enableTreesitter = true;
+
+          nix.enable = true;
+          rust.enable = true;
+          rust.crates.enable = true;
+        };
       };
     };
   };
@@ -66,10 +86,4 @@
   #  ];
   #};
 
-#  programs.nixvim = {
-#    enable = true;
-#
-#    colorschemes.catppuccin.enable = true;
-#    plugins.lualine.enable = true;
-#  };
 }

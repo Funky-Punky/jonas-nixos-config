@@ -26,7 +26,6 @@
             home-manager.extraSpecialArgs = {inherit inputs;};
             home-manager.users.jonas = ./home.nix;
           }
-#        inputs.nvf.homeManagerModules.default
       ];
     };
 
