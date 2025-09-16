@@ -13,6 +13,7 @@
   imports = [
     # Include the results of the hardware scan.
     /etc/nixos/hardware-configuration.nix
+    ./hyprland.nix
     ./desktop-audio.nix
   ];
 
@@ -58,21 +59,6 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  services.greetd = {
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "Hyprland";
-        user = "jonas";
-      };
-      default_session = initial_session;
-    };
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jonas = {
@@ -119,6 +105,7 @@
     pulseaudio
     discord
     helix
+    bat
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

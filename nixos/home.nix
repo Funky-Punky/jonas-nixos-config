@@ -71,6 +71,7 @@
         enableTreesitter = true;
 
         nix.enable = true;
+        markdown.enable = true;
         rust.enable = true;
         rust.crates.enable = true;
       };
