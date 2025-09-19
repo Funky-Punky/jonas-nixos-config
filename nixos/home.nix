@@ -8,6 +8,7 @@
   imports = [
     inputs.nvf.homeManagerModules.default
     inputs.spicetify-nix.homeManagerModules.default
+    ./hyprland.nix
   ];
 
   home.username = "jonas";
