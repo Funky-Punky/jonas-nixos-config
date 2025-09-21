@@ -60,6 +60,9 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
+  # fonts:
+  fonts.packages = with pkgs; [ nerd-fonts.hack ];
+
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
