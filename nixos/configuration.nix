@@ -117,10 +117,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    vscodium
     wget
     neofetch
     alacritty
-    kitty
     rofi
     kdePackages.dolphin
     helvum
@@ -128,6 +128,7 @@
     discord
     helix
     bat
+    qimgv
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

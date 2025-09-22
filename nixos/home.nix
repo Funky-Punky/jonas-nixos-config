@@ -26,6 +26,13 @@
     };
   };
 
+  programs.kitty = {
+    enable = true;
+    settings = {
+      background_opacity = 0.8;
+    };
+  };
+
   programs.ranger = {
     enable = true;
     settings = {
@@ -55,6 +62,7 @@
         enable = true;
         name = "onedark";
         style = "deep";
+        transparent = true;
       };
 
       vim.statusline.lualine.enable = true;

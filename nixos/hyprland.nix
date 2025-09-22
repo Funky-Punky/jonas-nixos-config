@@ -8,9 +8,24 @@
 
   home.packages = with pkgs; [
     cowsay
-    patray
-    networkmanagerapplet
+    hyprpaper
   ];
+
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      ipc = "on";
+      splash = false;
+      splash_offset = 2.0;
+
+      preload =
+        [ "/home/jonas/jonas-nixos-config/nixos/wallhaven-jxgd25.jpg" ];
+
+      wallpaper = [
+        ",/home/jonas/jonas-nixos-config/nixos/wallhaven-jxgd25.jpg"
+      ];
+    };
+  };
 
   programs.waybar = {
     enable = true;
@@ -55,13 +70,13 @@
           tooltip = true;
           tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>";
         };
-        "hyprland/window" = {
-          max-length = 22;
-          separate-outputs = false;
-          rewrite = {
-            "" = " 🙈 No Windows? ";
-          };
-        };
+        #"hyprland/window" = {
+        #  max-length = 22;
+        #  separate-outputs = false;
+        #  rewrite = {
+        #    "" = " 🙈 No Windows? ";
+        #  };
+        #};
         "memory" = {
           interval = 10;
           format = " {}%";
@@ -307,7 +322,7 @@
           "workspaces, 1, 1.94, almostLinear, fade"
           "workspacesIn, 1, 1.21, almostLinear, fade"
           "workspacesOut, 1, 1.94, almostLinear, fade"
-          "zoomFactor, 1, 7, quick"
+          # "zoomFactor, 1, 7, quick"
         ];
       };
 
