@@ -2,28 +2,22 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 {
-  input,
-  lib,
   inputs,
-  config,
   pkgs,
   ...
 }:
 {
+  specialArgs = { inherit inputs; };
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../desktop-audio.nix
+    ../shared-home/desktop-audio.nix
+    ../shared/configuration.nix
   ];
 
-  #home-manager.useUserPackages = true;
-  #home-manager.useGlobalPkgs = true;
-  #home-manager.backupFileExtension = "backup";
-  #home-manager.users.jonas = import ./home.nix;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
-  # boot.loader.systemd-boot.sortKey = "zzz";
   boot.loader.efi.canTouchEfiVariables = true;
 
   time.hardwareClockInLocalTime = true;
@@ -128,7 +122,6 @@
     pulseaudio
     discord
     helix
-    bat
     qimgv
     rustc
   ];
