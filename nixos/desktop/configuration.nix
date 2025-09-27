@@ -13,7 +13,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./desktop-audio.nix
+    ../desktop-audio.nix
   ];
 
   #home-manager.useUserPackages = true;

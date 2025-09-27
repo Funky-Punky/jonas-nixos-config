@@ -28,9 +28,9 @@
     {
       nixosConfigurations.nixos-desktop = nixpkgs.lib.nixosSystem {
         inherit system;
-        # specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs; };
         modules = [
-          ./destkop/configuration.nix
+          ./desktop/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
