@@ -22,19 +22,22 @@
       home-manager,
       ...
     }@inputs:
+    let 
+      system = "x86_64-linux";
+    in
     {
       nixosConfigurations.nixos-desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        system = "x86_64-linux";
+        inherit system;
+        # specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix
+          ./destkop/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.jonas = ./home.nix;
+            home-manager.users.jonas = ./desktop/home.nix;
           }
         ];
       };

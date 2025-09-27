@@ -12,7 +12,7 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
     ./desktop-audio.nix
   ];
 
@@ -23,6 +23,7 @@
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
+  # boot.loader.systemd-boot.sortKey = "zzz";
   boot.loader.efi.canTouchEfiVariables = true;
 
   time.hardwareClockInLocalTime = true;
@@ -129,6 +130,7 @@
     helix
     bat
     qimgv
+    rustc
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
