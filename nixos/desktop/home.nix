@@ -5,6 +5,7 @@
 }:
 {
   imports = [
+    ../shared-home/home.nix
     ../shared-home/de/hyprland.nix
   ];
 
