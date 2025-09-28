@@ -19,10 +19,10 @@
       splash_offset = 2.0;
 
       preload =
-        [ "/home/jonas/jonas-nixos-config/nixos/wallhaven-jxgd25.jpg" ];
+        [ "/home/jonas/jonas-nixos-config/nixos/shared-home/walls/wallhaven-jxgd25.jpg" ];
 
       wallpaper = [
-        ",/home/jonas/jonas-nixos-config/nixos/wallhaven-jxgd25.jpg"
+        ",/home/jonas/jonas-nixos-config/nixos/shared-home/walls/wallhaven-jxgd25.jpg"
       ];
     };
   };

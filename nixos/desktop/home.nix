@@ -8,7 +8,7 @@
   imports = [
     inputs.nvf.homeManagerModules.default
     inputs.spicetify-nix.homeManagerModules.default
-    ./hyprland.nix
+    ../shared-home/de/hyprland.nix
   ];
 
   home.username = "jonas";
@@ -19,7 +19,7 @@
     enable = true;
     shellAliases = {
       btw = "echo I use NixOs btw";
-      nrs = "sudo nixos-rebuild switch --flake /home/jonas/jonas-nixos-config/nixos --impure";
+      nrs = "sudo nixos-rebuild switch --flake /home/jonas/jonas-nixos-config/nixos";
     };
     sessionVariables = {
       EDITOR = "vim";

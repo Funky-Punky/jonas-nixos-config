@@ -7,7 +7,6 @@
   ...
 }:
 {
-  specialArgs = { inherit inputs; };
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -58,11 +57,7 @@
   # fonts:
   fonts.packages = with pkgs; [ nerd-fonts.hack ];
 
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-    xwayland.enable = true;
-  };
+
 
   services.greetd = {
     enable = true;
