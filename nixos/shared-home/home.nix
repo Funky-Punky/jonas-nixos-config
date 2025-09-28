@@ -5,7 +5,7 @@
 }:
 {
   imports = [
-    inputs.spicetify-nix.homeManagerModules.default
+    ./nvf.nix
   ];
 
   programs.bash = {
@@ -36,14 +36,5 @@
   programs.git.userName = "Honas";
   programs.git.userEmail = "jonas.reinstaedtler@web.de";
 
-  programs.spicetify =
-  let
-    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-  in
-  {
-    enable = true;
-    enabledExtensions = with spicePkgs.extensions; [
-      adblock
-    ];
-  };
+
 }
