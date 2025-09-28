@@ -24,6 +24,7 @@
     helix
     qimgv
     rustc
+    busybox
   ];
   programs.firefox.enable = true;
 
