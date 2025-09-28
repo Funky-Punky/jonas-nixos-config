@@ -15,7 +15,7 @@
   home.stateVersion = "25.05";
 
   programs.bash.shellAliases = {
-    nrs = "sudo nixos-rebuild switch --flake /home/jonas/jonas-nixos-config/nixos#laptop-nixos";
+    nrs = "sudo nixos-rebuild switch --flake /home/jonas/jonas-nixos-config#desktop-nixos";
   };
 
   programs.spicetify =
