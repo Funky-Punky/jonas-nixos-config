@@ -7,6 +7,8 @@
   imports = [
     ../shared-home/home.nix
     ../shared-home/de/hyprland.nix
+    ../shared-home/de/waybar.nix
+    ../shared-home/stylix.nix
     inputs.spicetify-nix.homeManagerModules.default
   ];
 
