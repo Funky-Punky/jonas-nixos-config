@@ -22,15 +22,15 @@
       vim.diagnostics.enable = true;
       vim.diagnostics.config.virtual_text = true;
 
-      vim.theme = {
-        enable = true;
-        name = "onedark";
-        style = "deep";
-        transparent = true;
-      };
+      #vim.theme = {
+      #  enable = true;
+      #  name = "onedark";
+      #  style = "deep";
+      #  transparent = true;
+      #};
 
       vim.statusline.lualine.enable = true;
-      vim.statusline.lualine.theme = "onedark";
+      #vim.statusline.lualine.theme = "onedark";
       vim.autocomplete.nvim-cmp.enable = true;
 
       vim.lsp = {

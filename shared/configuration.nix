@@ -12,6 +12,9 @@
     # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    cava
+    playerctl
+    pavucontrol
     vscodium
     wget
     neofetch
@@ -51,7 +54,7 @@
   };
 
   # fonts:
-  fonts.packages = with pkgs; [ nerd-fonts.hack ];
+  fonts.packages = with pkgs; [ nerd-fonts.hack nerd-fonts.lekton ];
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;

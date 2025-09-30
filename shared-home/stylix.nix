@@ -4,37 +4,37 @@
   inputs,
   ...
 }: {
-  imports = {
+  imports = [
     inputs.stylix.homeModules.stylix
-  };
+  ];
   stylix = {
     enable = true;
     polarity = "dark";
-    opacity.terminal = 1.0;
+    opacity.terminal = 0.9;
     base16Scheme = {
       #scheme: "Rosé Pine"
       #author: "Emilia Dunfelt <edun@dunfelt.se>"
-      base00 = "191724";
-      base01 = "1f1d2e";
-      base02 = "26233a";
-      base03 = "6e6a86";
-      base04 = "908caa";
-      base05 = "e0def4";
-      base06 = "e0def4";
-      base07 = "524f67";
-      base08 = "eb6f92";
-      base09 = "f6c177";
-      base0A = "ebbcba";
-      base0B = "31748f";
-      base0C = "9ccfd8";
-      base0D = "c4a7e7";
-      base0E = "f6c177";
-      base0F = "524f67";
+base00= "24283b";
+base01= "1f2335";
+base02= "292e42";
+base03= "565f89";
+base04= "a9b1d6";
+base05= "c0caf5";
+base06= "c0caf5";
+base07= "c0caf5";
+base08= "f7768e";
+base09= "ff9e64";
+base0A= "e0af68";
+base0B= "9ece6a";
+base0C= "1abc9c";
+base0D= "41a6b5";
+base0E= "bb9af7";
+base0F= "ff007c";
     };
-    icons = {
-      enable = true;
-      package = pkgs.windows10-icons;
-    };
+    #icons = {
+    #  enable = true;
+    #  package = pkgs.mate.mate-icon-theme;
+    #};
     cursor = {
       size = 28;
       package = pkgs.openzone-cursors;
@@ -42,19 +42,19 @@
     };
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.lekton;
-        name = "Lekton Nerd Font Mono";
+        package = pkgs.nerd-fonts.hack;
+        name = "nerd-fonts-hack";
       };
       sansSerif = {
-        package = pkgs.nerd-fonts.lekton;
-        name = "Lekton Nerd Font Mono";
+        package = pkgs.nerd-fonts.hack;
+        name = "nerd-fonts-hack";
       };
       serif = {
-        package = pkgs.nerd-fonts.lekton;
-        name = "Lekton Nerd Font Mono";
+        package = pkgs.nerd-fonts.hack;
+        name = "nerd-fonts-hack";
       };
       sizes = {
-        applications = 14;
+        applications = 10;
         terminal = 14;
         desktop = 14;
         popups = 12;

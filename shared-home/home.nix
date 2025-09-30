@@ -8,6 +8,8 @@
     ./nvf.nix
   ];
 
+  programs.vscode.enable = true;
+
   programs.bash = {
     enable = true;
     shellAliases = {
@@ -21,7 +23,7 @@
   programs.kitty = {
     enable = true;
     settings = {
-      background_opacity = 0.8;
+      #background_opacity = 0.8;
     };
   };
 
