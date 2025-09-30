@@ -13,6 +13,11 @@
     nvf.url = "github:notashelf/nvf";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
+    stylix = {
+      url = "github:nix-community/stylix/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs =
