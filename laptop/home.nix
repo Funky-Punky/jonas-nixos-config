@@ -20,6 +20,9 @@
     nrs = "sudo nixos-rebuild switch --flake /home/jonas/jonas-nixos-config#laptop-nixos";
   };
 
+  wayland.windowManager.hyprland.settings.monitor = "eDP-1,1920x1080,auto,1.0";
+
+
   programs.spicetify =
   let
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
