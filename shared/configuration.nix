@@ -91,4 +91,9 @@
     LC_TELEPHONE = "de_DE.UTF-8";
     LC_TIME = "de_DE.UTF-8";
   };
+
+  services.devmon.enable = true;
+  services.gvfs.enable = true; 
+  services.udisks2.enable = true;
+  security.polkit.enable = true;
 }
