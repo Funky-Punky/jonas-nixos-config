@@ -20,7 +20,7 @@
   animation-name: blink_red;
   animation-duration: 1s;
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 10;
   animation-direction: alternate;
 }
 
@@ -32,7 +32,13 @@ window>box {
   margin-left: 5px;
   margin-right: 5px;
   margin-top: 5px;
+  border-radius: 10px;
+
   background-color: #191724;
+}
+
+window#waybar.empty>box {
+  background-color: transparent;
 }
 
 #workspaces {
@@ -95,6 +101,7 @@ tooltip label {
   padding-right: 10px;
 }
 
+
 #memory {
   color: #8EBBBA;
 }
@@ -103,9 +110,7 @@ tooltip label {
   color: #B38DAC;
 }
 
-#clock {
-  color: #E4E8EF;
-}
+
 
 #custom-wall {
   color: #B38DAC;
@@ -158,3 +163,13 @@ tooltip label {
 #custom-cava-internal {
   font-family: "Hack Nerd Font";
 }
+
+#clock {
+  color: red;
+}
+
+#waybar.empty #clock {
+  /* color: #E4E8EF;  */
+  color: green;
+}
+

@@ -39,9 +39,7 @@
         "tooltip" = false;
       };
       "hyprland/window" = {
-        max-length = 25;
-        separate-outputs = false;
-        rewrite = { "" = "/ᐠ - ˕ -マ Ⳋ ⋆｡°✩♬ ♪"; };
+        format = "";
       };
      /* "custom/wall" = {
         "on-click" = ${sharedScripts.wallpaper_random}/bin/wallpaper_random";
