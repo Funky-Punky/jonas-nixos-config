@@ -164,12 +164,16 @@ tooltip label {
   font-family: "Hack Nerd Font";
 }
 
+
+#wireplumber,
+#backlight,
 #clock {
-  color: red;
+  background-color: transparent;
+  border-radius: 5px;
 }
 
+#waybar.empty #wireplumber,
+#waybar.empty #backlight,
 #waybar.empty #clock {
-  /* color: #E4E8EF;  */
-  color: green;
+  background-color: #a71049;
 }
-
