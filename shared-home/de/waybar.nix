@@ -10,7 +10,8 @@
     };
     style = builtins.readFile ./style.css;
 
-    settings = [{
+    settings = [
+      {
       "layer" = "top";
       "position" = "top";
       modules-left = [
@@ -40,6 +41,7 @@
       };
       "hyprland/window" = {
         format = "";
+        separate-outputs = true;
       };
      /* "custom/wall" = {
         "on-click" = ${sharedScripts.wallpaper_random}/bin/wallpaper_random";
@@ -168,6 +170,7 @@
                    "on-click-right"= "mode";
                    };
     };
-    }];
+    }
+    ];
   };
 }
