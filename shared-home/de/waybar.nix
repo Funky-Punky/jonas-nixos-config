@@ -121,7 +121,7 @@
         "tooltip-format" = "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})";
       }; */
       "network" = {
-        "format-disconnected" = "󰯡 Disconnected";
+        "format-disconnected" = "󰯡  Disconnected";
         "format-ethernet" = "󰀂";
         "format-linked" = "󰖪 (No IP)";
         "format-wifi" = "󰖩 ";

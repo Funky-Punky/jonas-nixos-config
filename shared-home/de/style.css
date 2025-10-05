@@ -32,7 +32,7 @@ window>box {
   margin-left: 5px;
   margin-right: 5px;
   margin-top: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
 
   background-color: #191724;
 }
@@ -41,9 +41,11 @@ window#waybar.empty>box {
   background-color: transparent;
 }
 
-#workspaces {
-  padding-left: 0px;
-  padding-right: 4px;
+#custom-launcher {
+  font-size: 20px;
+  padding-left: 8px;
+  padding-right: 18px;
+  color: #ebbcba;
 }
 
 #workspaces button {
@@ -77,29 +79,65 @@ tooltip label {
   color: #E4E8EF;
 }
 
-#custom-launcher {
-  font-size: 20px;
-  padding-left: 8px;
-  padding-right: 6px;
-  color: #ebbcba;
-}
-
-#mode,
+#cava,
+#mpris,
 #clock,
 #memory,
-#temperature,
 #cpu,
-#custom-wall,
-#temperature,
 #backlight,
 #wireplumber,
 #network,
-#battery,
-#custom-powermenu,
-#custom-cava-internal {
-  padding-left: 10px;
-  padding-right: 10px;
+#battery {
+  padding: 0 10px;
+
+  background-color: transparent;
 }
+
+
+#waybar.empty #custom-launcher,
+#waybar.empty #workspaces button,
+#waybar.empty #cava,
+#waybar.empty #mpris,
+#waybar.empty #clock,
+#waybar.empty #memory,
+#waybar.empty #cpu,
+#waybar.empty #backlight,
+#waybar.empty #wireplumber,
+#waybar.empty #network,
+#waybar.empty #battery {
+  background-color: rgba(25, 23, 36, 0.7);
+}
+
+#waybar.empty #custom-launcher,
+#waybar.empty #clock,
+#waybar.empty #wireplumber {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#waybar.empty #clock,
+#waybar.empty #cava,
+#waybar.empty #battery {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+#waybar.empty #workspaces button.active {
+  background-color: #ebbcba;
+  color: #191724;
+}
+
+#waybar.empty #workspaces button.urgent {
+  color: rgb(26, 24, 38);
+}
+
+#waybar.empty #workspaces button:hover {
+  background-color: #e0def4;
+  color: #191724;
+}
+
+
 
 
 #memory {
@@ -109,8 +147,6 @@ tooltip label {
 #cpu {
   color: #B38DAC;
 }
-
-
 
 #custom-wall {
   color: #B38DAC;
@@ -162,18 +198,4 @@ tooltip label {
 
 #custom-cava-internal {
   font-family: "Hack Nerd Font";
-}
-
-
-#wireplumber,
-#backlight,
-#clock {
-  background-color: transparent;
-  border-radius: 5px;
-}
-
-#waybar.empty #wireplumber,
-#waybar.empty #backlight,
-#waybar.empty #clock {
-  background-color: #a71049;
 }
