@@ -12,9 +12,11 @@
     # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    xournalpp
     brightnessctl
     light
     cava
+    libreoffice-qt6-fresh
     playerctl
     pavucontrol
     vscodium
