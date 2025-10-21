@@ -41,8 +41,28 @@
     ];
   };
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+        FastConnectable = true;
+      };
+      Policy = {
+        AutoEnable = true;
+      };
+    };
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = with pkgs; [
+    bluetui
+  ];
+  
+  services.blueman.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

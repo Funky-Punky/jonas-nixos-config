@@ -62,13 +62,13 @@
       };
       "backlight" = {
         "device" = "intel_backlight";
-        "on-scroll-up" = "brightnessctl s 5%+";
-        "on-scroll-down" = "brightnessctl s 5%-";
+        "on-scroll-up" = "brightnessctl s 5%-";
+        "on-scroll-down" = "brightnessctl s 5%+";
         "format" = "{icon} {percent}%";
         "format-icons" = [ "󰃝" "󰃞" "󰃟" "󰃠" ];
       };
       "wireplumber" = {
-        "scroll-step" = 5;
+        "scroll-step" = -5;
         "format" = "{icon} {volume}%";
         "format-muted" = "󰖁 Muted";
         "format-icons" = {

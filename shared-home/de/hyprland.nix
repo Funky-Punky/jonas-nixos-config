@@ -228,7 +228,7 @@
 
       # https://wiki.hypr.land/Configuring/Variables/#input
       input = {
-        kb_layout = "us";
+        kb_layout = "eu";
         kb_variant = "";
         kb_model = "";
         kb_options = "";
@@ -239,7 +239,7 @@
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
 
         touchpad = {
-          natural_scroll = false;
+          natural_scroll = true;
         };
       };
 
