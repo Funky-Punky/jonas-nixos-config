@@ -17,7 +17,6 @@
     cava
     playerctl
     pavucontrol
-    vscodium
     wget
     neofetch
     alacritty
