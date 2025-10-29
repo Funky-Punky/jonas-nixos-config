@@ -31,6 +31,7 @@
     qimgv
     rustc
     busybox
+    jetbrains.pycharm-professional
   ];
   programs.firefox.enable = true;
 
