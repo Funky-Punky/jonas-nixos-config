@@ -19,7 +19,6 @@
     libreoffice-qt6-fresh
     playerctl
     pavucontrol
-    vscodium
     wget
     neofetch
     alacritty
@@ -32,6 +31,7 @@
     qimgv
     rustc
     busybox
+    jetbrains.pycharm-professional
   ];
   programs.firefox.enable = true;
 

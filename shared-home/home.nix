@@ -8,7 +8,9 @@
     ./nvf.nix
   ];
 
-  programs.vscode.enable = true;
+  home.packages = with pkgs; [
+    devenv
+  ];
 
   programs.bash = {
     enable = true;
@@ -33,6 +35,13 @@
       show_hidden = true;
     };
   };
+
+  programs.vscode = {
+  enable = true;
+  extensions = with pkgs.vscode-extensions; [
+    jnoortheen.nix-ide
+  ];
+};
 
   programs.git.enable = true;
   programs.git.userName = "Honas";

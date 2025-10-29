@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }:
 {
@@ -19,6 +20,8 @@
   programs.bash.shellAliases = {
     nrs = "sudo nixos-rebuild switch --flake /home/jonas/jonas-nixos-config#desktop-nixos";
   };
+
+  wayland.windowManager.hyprland.settings.input.sensitivity = lib.mkForce (-0.8);
 
   programs.spicetify =
   let

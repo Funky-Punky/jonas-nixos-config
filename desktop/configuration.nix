@@ -42,6 +42,8 @@
     ];
   };
 
+  nix.settings.trusted-users = [ "root" "jonas" ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
