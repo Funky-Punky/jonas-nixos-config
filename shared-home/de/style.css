@@ -107,7 +107,7 @@ tooltip label {
 #waybar.empty #battery {
   background-color: rgba(25, 23, 36, 0.7);
 }
-
+/*
 #waybar.empty #custom-launcher,
 #waybar.empty #clock,
 #waybar.empty #wireplumber {
@@ -120,6 +120,14 @@ tooltip label {
 #waybar.empty #battery {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+*/
+
+/* Rechte Gruppe */
+.modules-right > widget:first-child > * {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 5px;
+  background-color: red;
 }
 
 
