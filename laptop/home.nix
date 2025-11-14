@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }:
 {
@@ -21,6 +22,11 @@
   };
 
   wayland.windowManager.hyprland.settings.monitor = "eDP-1,1920x1080,auto,1.0";
+
+  wayland.windowManager.hyprland.settings.device = lib.mkForce {
+        name = "g-tech-wireless-dongle-mouse";
+        sensitivity = -0.5;
+      };
 
 
   programs.spicetify =
