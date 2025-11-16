@@ -89,12 +89,12 @@ tooltip label {
 #network,
 #battery {
   padding: 0 10px;
-
   background-color: transparent;
 }
 
 
 #waybar.empty #custom-launcher,
+#waybar.empty #window,
 #waybar.empty #workspaces button,
 #waybar.empty #cava,
 #waybar.empty #mpris,
@@ -102,34 +102,12 @@ tooltip label {
 #waybar.empty #memory,
 #waybar.empty #cpu,
 #waybar.empty #backlight,
+#waybar.empty #tray,
 #waybar.empty #wireplumber,
 #waybar.empty #network,
 #waybar.empty #battery {
   background-color: rgba(25, 23, 36, 0.7);
 }
-/*
-#waybar.empty #custom-launcher,
-#waybar.empty #clock,
-#waybar.empty #wireplumber {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-#waybar.empty #clock,
-#waybar.empty #cava,
-#waybar.empty #battery {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-*/
-
-/* Rechte Gruppe */
-.modules-right > widget:first-child > * {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 5px;
-  background-color: red;
-}
-
 
 #waybar.empty #workspaces button.active {
   background-color: #ebbcba;
@@ -144,6 +122,23 @@ tooltip label {
   background-color: #e0def4;
   color: #191724;
 }
+
+
+.modules-left > widget:first-child > *,
+.modules-center > widget:first-child > *,
+.modules-right > widget:first-child > * {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.modules-left > widget:last-child > *,
+.modules-center > widget:last-child > *,
+.modules-right > widget:last-child > * {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
 
 
 

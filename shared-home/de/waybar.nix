@@ -16,6 +16,7 @@
       "position" = "top";
       modules-left = [
         "custom/launcher"
+        "hyprland/window"
         "hyprland/workspaces"
         # "custom/wall"
         "cava"
@@ -23,16 +24,15 @@
       ];
       modules-center = [
         "clock"
-        "hyprland/window"
       ];
       modules-right = [
+        "tray"
         "wireplumber"
         "backlight"
         "memory"
         "cpu"
         "network"
         "battery"
-        "tray"
       ];
       "custom/launcher" = {
         "format" = "";
@@ -68,7 +68,7 @@
         "format-icons" = [ "󰃝" "󰃞" "󰃟" "󰃠" ];
       };
       "wireplumber" = {
-        "scroll-step" = -5;
+        "scroll-step" = 5;
         "format" = "{icon} {volume}%";
         "format-muted" = "󰖁 Muted";
         "format-icons" = {
@@ -136,7 +136,8 @@
         "spacing" = 5;
       };
       "mpris"= {
-	      "format"= "{status_icon} {artist}  {title}";
+        "player" = "spotify";
+	      "format"= "{status_icon}  {artist}   {title}";
 	      "format-paused"= "{status_icon} {artist}  {title}";
 	      "player-icons"= {
 	      	"default"= "▶";

@@ -67,6 +67,7 @@
       "$fileManager" = "dolphin";
       "$browser" = "firefox";
       "$menu" = "rofi -show drun";
+       xdg-settings set default-web-browser firefox.desktop 
 
       #################
       ### AUTOSTART ###
@@ -343,6 +344,8 @@
 
       # See https://wiki.hypr.land/Configuring/Window-Rules/ for more
       # See https://wiki.hypr.land/Configuring/Workspace-Rules/ for workspace rules
+
+
 
       windowrule = [
         # Example windowrule

@@ -22,6 +22,19 @@
   };
 
   wayland.windowManager.hyprland.settings.input.sensitivity = lib.mkForce (-0.8);
+  wayland.windowManager.hyprland.settings.workspace = [
+        "1, monitor:DP-1"
+        "3, monitor:DP-1"
+        "5, monitor:DP-1"
+        "7, monitor:DP-1"
+        "9, monitor:DP-1"
+
+        "2, monitor:DP-3"
+        "4, monitor:DP-3"
+        "6, monitor:DP-3"
+        "8, monitor:DP-3"
+        "0, monitor:DP-3"
+      ];
 
   programs.spicetify =
   let

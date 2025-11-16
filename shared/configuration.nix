@@ -19,6 +19,8 @@
     libreoffice-qt6-fresh
     playerctl
     pavucontrol
+    chromium
+    vlc
     wget
     neofetch
     alacritty
