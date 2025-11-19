@@ -67,7 +67,6 @@
       "$fileManager" = "dolphin";
       "$browser" = "firefox";
       "$menu" = "rofi -show drun";
-       xdg-settings set default-web-browser firefox.desktop 
 
       #################
       ### AUTOSTART ###
