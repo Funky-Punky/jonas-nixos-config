@@ -54,8 +54,6 @@
     };
   };
 
-  # https://unix.stackexchange.com/questions/379632/how-to-set-the-default-browser-in-nixos
-
   programs.git.enable = true;
   programs.git.userName = "Honas";
   programs.git.userEmail = "jonas.reinstaedtler@web.de";
