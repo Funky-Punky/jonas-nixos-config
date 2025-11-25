@@ -41,6 +41,8 @@
     ];
   };
 
+  nix.settings.trusted-users = [ "root" "jonas" ];
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
