@@ -103,6 +103,7 @@ tooltip label {
 #waybar.empty #cpu,
 #waybar.empty #backlight,
 #waybar.empty #tray,
+#waybar.empty #custom-hyprshot,
 #waybar.empty #wireplumber,
 #waybar.empty #network,
 #waybar.empty #battery {

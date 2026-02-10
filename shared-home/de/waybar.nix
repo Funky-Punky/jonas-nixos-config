@@ -27,6 +27,7 @@
       ];
       modules-right = [
         "tray"
+        "custom/hyprshot"
         "wireplumber"
         "backlight"
         "memory"
@@ -124,7 +125,7 @@
       }; */
       "network" = {
         "format-disconnected" = "󰯡  Disconnected";
-        "format-ethernet" = "󰀂";
+        "format-ethernet" = "󰀂 ";
         "format-linked" = "󰖪 (No IP)";
         "format-wifi" = "󰖩 ";
         "interval" = 1;
@@ -148,6 +149,10 @@
 	      	"paused" = "";
           "stopped" = "";
 	      };
+      };
+      "custom/hyprshot" = {
+        "format"= " 📸";
+        "on-click"= "hyprshot -m region --clipboard-only";
       };
       "cava"= {
         "framerate"= 60;
