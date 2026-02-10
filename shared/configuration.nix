@@ -9,9 +9,11 @@
     "flakes"
   ];
   
-    # List packages installed in system profile. To search, run:
+  # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    signal-desktop
+    zip
     mendeley
     hyprshot
     thunderbird
@@ -56,12 +58,14 @@
     enable = true;
     settings = rec {
       initial_session = {
-        command = "Hyprland";
+        command = "hyprland > /dev/null 2>&1";
         user = "jonas";
       };
       default_session = initial_session;
     };
   };
+
+  security.pam.services.hyprlock = {};
 
   # fonts:
   fonts.packages = with pkgs; [ nerd-fonts.hack nerd-fonts.lekton ];

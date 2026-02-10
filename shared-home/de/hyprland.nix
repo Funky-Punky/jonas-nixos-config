@@ -6,9 +6,13 @@
 
 
   home.packages = with pkgs; [
-    cowsay
     hyprpaper
+    hyprlock
   ];
+
+  services.swaync = {
+    enable = true;
+  };
 
   services.hyprpaper = {
     enable = true;
@@ -76,6 +80,7 @@
       # Or execute your favorite apps at launch like this:
 
       "exec-once" = [
+        "hyprlock || hyprctl dispatch exit"
         "waybar"
       ];
 
@@ -273,6 +278,7 @@
         "$mainMod, R, exec, $menu"
         "$mainMod, P, pseudo," # dwindle
         "$mainMod, J, togglesplit," # dwindle
+        "$mainMod, L, exec, hyprlock"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
