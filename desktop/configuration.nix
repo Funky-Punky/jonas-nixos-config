@@ -39,6 +39,7 @@
       "networkmanager"
       "wheel"
       "audio"
+      "docker"
     ];
   };
 
