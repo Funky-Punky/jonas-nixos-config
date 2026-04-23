@@ -14,6 +14,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    qgis
+    qt6.qtwayland # For QGIS versions built on Qt6
+    libsForQt5.qt5.qtwayland # For QGIS versions built on Qt5
     signal-desktop
     zip
     mendeley
@@ -50,21 +53,15 @@
   #  package = inputs.hyprland.packages."${pkgs.system}".hyprland;
   #  xwayland.enable = true;
   #};  
+
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     xwayland.enable = true;
-  };
-
-  services.greetd = {
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "hyprland > /dev/null 2>&1";
-        user = "jonas";
-      };
-      default_session = initial_session;
-    };
+    withUWSM = true;
   };
 
   security.pam.services.hyprlock = {};

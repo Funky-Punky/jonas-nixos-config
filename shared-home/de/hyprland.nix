@@ -14,6 +14,16 @@
     enable = true;
   };
 
+ home.sessionVariables = {
+    # Forces Qt apps to use Wayland, falling back to X11 (xcb) if necessary
+    QT_QPA_PLATFORM = "wayland;xcb";
+    # Ensures apps recognize the Wayland session
+    XDG_SESSION_TYPE = "wayland";
+    # Common hint for Electron and other toolkit-based apps
+    NIXOS_OZONE_WL = "1";
+  };
+
+
   services.hyprpaper = {
     enable = true;
     settings = {
@@ -35,7 +45,13 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
+    systemd.variables = ["--all"]; # Automatically adds dbus-update-activation-environment
+
     settings = {
+      # windowrulev2 = [
+      #   "float, class:^(qgis)$"
+      #   "center, class:^(qgis)$"
+      # ];
 
       # This is an example Hyprland config file for Nix.
       # Refer to the wiki for more information.
@@ -80,8 +96,6 @@
       # Or execute your favorite apps at launch like this:
 
       "exec-once" = [
-        "hyprlock || hyprctl dispatch exit"
-        "waybar"
       ];
 
       #############################
@@ -249,9 +263,9 @@
       };
 
       # https://wiki.hypr.land/Configuring/Variables/#gestures
-      gestures = {
-        workspace_swipe = false;
-      };
+        gesture = [
+          "3, horizontal, workspace" 
+        ];
 
       # Example per-device config
       # See https://wiki.hypr.land/Configuring/Keywords/#per-device-input-configs for more
@@ -277,7 +291,7 @@
         "$mainMod, V, togglefloating,"
         "$mainMod, R, exec, $menu"
         "$mainMod, P, pseudo," # dwindle
-        "$mainMod, J, togglesplit," # dwindle
+        "$mainMod, J, layoutmsg, togglesplit," # dwindle
         "$mainMod, L, exec, hyprlock"
 
         # Move focus with mainMod + arrow keys
@@ -352,16 +366,16 @@
 
 
 
-      windowrule = [
-        # Example windowrule
-        # "float,class:^(kitty)$,title:^(kitty)$"
+      # wayland.windowManager.hyprland.settings = {
+      #   # Use windowrulev2 (v2) for these complex rules
+      #   windowrulev2 = [
+      #     # Fixed suppressevent: it is now its own rule type
+      #     "suppressmaximize, class:.*"
 
-        # Ignore maximize requests from apps. You'll probably like this.
-        "suppressevent maximize, class:.*"
-
-        # Fix some dragging issues with XWayland
-        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-      ];
+      #     # Fixed nofocus: Added the missing value (1) and ensured it's v2 style
+      #     "nofocus, class:^$, title:^$, xwayland:1, floating:1, fullscreen:0, pinned:0"
+      #   ];
+      # };
     };
 
   };
