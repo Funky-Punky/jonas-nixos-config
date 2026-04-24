@@ -64,6 +64,8 @@
     withUWSM = true;
   };
 
+  # systemd.services.display-manager.path = [ pkgs.uwsm ];
+
   security.pam.services.hyprlock = {};
 
   # fonts:
