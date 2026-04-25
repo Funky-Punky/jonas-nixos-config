@@ -10,8 +10,9 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../shared/desktop-audio.nix
+    ./desktop-audio.nix
     ../shared/configuration.nix
+    ../shared/hyprland/default.nix
   ];
 
   # Bootloader.

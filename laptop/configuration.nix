@@ -10,6 +10,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../shared/hyprland/default.nix
     ../shared/configuration.nix
   ];
 

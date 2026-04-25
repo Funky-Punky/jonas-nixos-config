@@ -21,45 +21,45 @@
     extraConfig.pipewire."lowpass" = {
       "context.modules" = [
         {
-	  name = "libpipewire-module-filter-chain";
-	  args = {
-	    "node.description" = "Low-Pass Filter Sink";
-	    "node.name" = "jonas-low-pass-filter";
-	    "media.name" = "lp-sink";
-	    "playback.props" = {
-	      "node.autoconnect" = false;
-	    };
+          name = "libpipewire-module-filter-chain";
+          args = {
+            "node.description" = "Low-Pass Filter Sink";
+            "node.name" = "jonas-low-pass-filter";
+            "media.name" = "lp-sink";
+            "playback.props" = {
+              "node.autoconnect" = false;
+            };
 
-	    "filter.graph" = {
-	      nodes = [
-	        {
-		  type = "builtin";
-		  name = "lowpass-l";
-		  label = "bq_lowpass";
-		  control = {
-		    "Freq" = 50;
-		  };
-		}
-		{
-		  type = "builtin";
-		  name = "lowpass-r";
-		  label = "bq_lowpass";
-		  control = {
-		    "Freq" = 50;
-		  };
-		}
-	      ];
-	      inputs = [ "lowpass-l:In" "lowpass-r:In" ];
-	      outputs = [ "lowpass-l:Out" "lowpass-r:Out" ];
-	    };
-	  };
-	}
+            "filter.graph" = {
+              nodes = [
+                {
+            type = "builtin";
+            name = "lowpass-l";
+            label = "bq_lowpass";
+            control = {
+              "Freq" = 50;
+            };
+          }
+          {
+            type = "builtin";
+            name = "lowpass-r";
+            label = "bq_lowpass";
+            control = {
+              "Freq" = 50;
+            };
+          }
+              ];
+              inputs = [ "lowpass-l:In" "lowpass-r:In" ];
+              outputs = [ "lowpass-l:Out" "lowpass-r:Out" ];
+            };
+          };
+        }
       ];
     };
     extraConfig.pipewire."combinestream" = {
       "context.modules" = [
         {
-	  name = "libpipewire-module-combine-stream";
+          name = "libpipewire-module-combine-stream";
           args = {
             "combine.mode" = "sink";
             "node.name" = "jonascombinesink";
@@ -77,7 +77,7 @@
 		    "media.class" = "Audio/Sink";
                     "node.name" = "alsa_output.usb-1532_Razer_BlackShark_V2_Pro_2.4_O001000007-00.analog-stereo";
                   }
-		];
+        ];
                 actions = {
 		  create-stream = {
                     "audio.position" = [ "FL" "FR" ];
