@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }:
 {
@@ -26,6 +27,15 @@
     enable = true;
     settings = {
       #background_opacity = 0.8;
+    };
+  };
+
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      font = {
+         normal = lib.mkForce { family = "nerd-fond-hack"; style = "Regular"; };
+      };
     };
   };
 
