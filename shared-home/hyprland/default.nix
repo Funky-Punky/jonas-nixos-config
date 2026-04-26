@@ -17,6 +17,14 @@
     enable = true;
   };
 
+  
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      jnoortheen.nix-ide
+    ];
+  };
+
 
   services.hyprpaper = {
     enable = true;
