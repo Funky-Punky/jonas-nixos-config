@@ -63,6 +63,21 @@
         ];
       };
 
+      nixosConfigurations.server-nixos = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./server/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.jonas = ./server/home.nix;
+          }
+        ];
+      };
       #homeConfigurations = {
       #  "jonas@nixos-desktop" = home-manager.lib.homeManagerConfiguration {
       #    pkgs = nixpkgs.legacyPackages."x86_64-linux";

@@ -32,11 +32,11 @@
 
   programs.alacritty = {
     enable = true;
-    settings = {
-      font = {
-         normal = lib.mkForce { family = "nerd-fond-hack"; style = "Regular"; };
-      };
-    };
+    # settings = {
+    #   font = {
+    #      normal = lib.mkForce { family = "nerd-fond-hack"; style = "Regular"; };
+    #   };
+    # };
   };
 
   programs.ranger = {

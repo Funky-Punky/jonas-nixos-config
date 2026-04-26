@@ -45,7 +45,7 @@
 
       # Set programs that you use
 
-      "$terminal" = "kitty";
+      "$terminal" = "alacritty";
       "$fileManager" = "dolphin";
       "$browser" = "firefox";
       "$menu" = "rofi -show drun";

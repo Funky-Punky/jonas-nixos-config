@@ -18,39 +18,19 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    signal-desktop
-    zip
-    mendeley
-    hyprshot
-    thunderbird
     texliveFull
-    xournalpp
     brightnessctl
     light
-    cava
-    libreoffice-qt6-fresh
-    playerctl
-    pavucontrol
-    chromium
-    vlc
     wget
     neofetch
-    alacritty
-    rofi
-    kdePackages.dolphin
-    helvum
     pulseaudio
-    discord
     helix
-    qimgv
     rustc
     busybox
-    jetbrains.pycharm-professional
   ];
-  programs.firefox.enable = true;
 
-  # fonts:
-  fonts.packages = with pkgs; [ nerd-fonts.hack nerd-fonts.lekton ];
+  # # fonts:
+  # fonts.packages = with pkgs; [ nerd-fonts.hack nerd-fonts.lekton ];
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;

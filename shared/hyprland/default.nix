@@ -5,45 +5,37 @@
 }:
 {
 
-  #programs.hyprland = {
-  #  enable = true;
-  #  package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-  #  xwayland.enable = true;
-  #};
-
-  # environment.sessionVariables = {
-    # Forces Qt apps to use Wayland, falling back to X11 (xcb) if necessary
-    # QT_QPA_PLATFORM = "xcb";
-    # Ensures apps recognize the Wayland session
-    # XDG_SESSION_TYPE = "wayland";
-    # Common hint for Electron and other toolkit-based apps
-    # NIXOS_OZONE_WL = "1";
-  # };
-
-  environment.systemPackages = [
-    (pkgs.symlinkJoin {
+  environment.systemPackages = with pkgs; [
+    (symlinkJoin {
       name = "qgis-wrapped";
-      paths = [ pkgs.qgis ];
-      buildInputs = [ pkgs.makeWrapper ];
+      paths = [ qgis ];
+      buildInputs = [ makeWrapper ];
       postBuild = ''
         wrapProgram $out/bin/qgis \
           --set QT_QPA_PLATFORM xcb
       '';
     })
+    signal-desktop
+    mendeley
+    hyprshot
+    thunderbird
+    xournalpp
+    cava
+    libreoffice-qt6-fresh
+    playerctl
+    pavucontrol
+    chromium
+    vlc
+    alacritty
+    rofi
+    kdePackages.dolphin
+    helvum
+    discord
+    jetbrains.pycharm
+    qimgv
   ];
 
-  # environment.variables = {
-  #   QT_QPA_PLATFORM = "wayland;xcb";
-  # };
-
-  # environment.systemPackages = [
-  #   (pkgs.qgis.overrideAttrs (old: {
-  #     postInstall = (old.postInstall or "") + ''
-  #       wrapProgram $out/bin/qgis \
-  #         --set QT_QPA_PLATFORM xcb
-  #     '';
-  #   }))
-  # ];
+  programs.firefox.enable = true;
 
   nix.settings = {
     substituters = ["https://hyprland.cachix.org"];
