@@ -5,6 +5,7 @@
 {
   imports = [
     ./hyprland.nix
+    ./waybar.nix
   ];
 
   home.packages = with pkgs; [
@@ -16,15 +17,6 @@
     enable = true;
   };
 
- home.sessionVariables = {
-    # Forces Qt apps to use Wayland, falling back to X11 (xcb) if necessary
-    QT_QPA_PLATFORM = "wayland;xcb";
-    # Ensures apps recognize the Wayland session
-    XDG_SESSION_TYPE = "wayland";
-    # Common hint for Electron and other toolkit-based apps
-    NIXOS_OZONE_WL = "1";
-  };
-
 
   services.hyprpaper = {
     enable = true;
@@ -34,10 +26,10 @@
       splash_offset = 2.0;
 
       preload =
-        [ "/home/jonas/jonas-nixos-config/shared-home/de/walls/wallhaven-jxgd25.jpg" ];
+        [ "/home/jonas/jonas-nixos-config/shared-home/hyprland/walls/wallhaven-jxgd25.jpg" ];
 
       wallpaper = [
-        ",/home/jonas/jonas-nixos-config/shared-home/de/walls/wallhaven-jxgd25.jpg"
+        ",/home/jonas/jonas-nixos-config/shared-home/hyprland/walls/wallhaven-jxgd25.jpg"
       ];
     };
   };

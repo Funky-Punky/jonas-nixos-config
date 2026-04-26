@@ -58,5 +58,4 @@
   programs.git.userName = "Honas";
   programs.git.userEmail = "jonas.reinstaedtler@web.de";
 
-
 }

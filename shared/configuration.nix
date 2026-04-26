@@ -14,9 +14,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    qgis
-    qt6.qtwayland # For QGIS versions built on Qt6
-    libsForQt5.qt5.qtwayland # For QGIS versions built on Qt5
     signal-desktop
     zip
     mendeley
