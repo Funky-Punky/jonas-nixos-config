@@ -44,6 +44,18 @@
 
   nix.settings.trusted-users = [ "root" "jonas" ];
 
+  environment.systemPackages = with pkgs; [
+    sysbench
+  ];
+  
+  powerManagement.enable = true;
+  powerManagement.powertop.enable = true;
+  powerManagement.cpuFreqGovernor = "powersave";
+  powerManagement.resumeCommands = ''
+    echo "System resumed"
+  '';
+
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
