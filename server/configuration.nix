@@ -19,22 +19,27 @@
 # boot.kernelParams = [ "nomodeset" ];
 
 # 1. nomodeset ENTFERNEN (wichtig für Power Management)
-  boot.kernelParams = [ 
-    "consoleblank=60"       # Schaltet den Monitor-Output nach 60s Idle aus
-    "amdgpu.runpm=1"        # Erzwingt aggressives Runtime Power Management für die GPU
-    "amdgpu.dc=1"           # Aktiviert Display Core (nötig für tiefere Sleep States)
+#  boot.kernelParams = [ 
+#    "consoleblank=60"       # Schaltet den Monitor-Output nach 60s Idle aus
+#    "amdgpu.runpm=1"        # Erzwingt aggressives Runtime Power Management für die GPU
+#    "amdgpu.dc=1"           # Aktiviert Display Core (nötig für tiefere Sleep States)
 #    "video=HDMI-A-1:d"      # Optional: Deaktiviert HDMI komplett (falls vorhanden)
 #    "video=DP-1:d"          # Optional: Deaktiviert DisplayPort komplett
-  ];
+#    "amdgpu.noretry=0"        # Verbessert die Stabilität beim Initialisieren
+#    "amdgpu.lockup_timeout=0" # Verhindert, dass der Treiber bei kleinen Hängern aufgibt
+#    "amdgpu.gpu_recovery=1"   # Erlaubt dem Treiber, sich selbst zu neustarten
+#    "video=efifb:off"         # Schaltet den UEFI-Standardtreiber aus
+#"consoleblank=60"         # Schirm aus nach 60s
+#  ];
 
   # 2. AMDGPU Treiber früh laden, damit er die Hardware kontrolliert
-  boot.initrd.kernelModules = [ "amdgpu" ];
+#  boot.initrd.kernelModules = [ "amdgpu" ];
   
   # 3. Firmware für die Vega-Grafik bereitstellen
-  hardware.enableRedistributableFirmware = true;
-
+#  hardware.enableRedistributableFirmware = true;
+#  hardware.cpu.amd.updateMicrocode = true;
   # 4. Automatisches Stromsparen via Powertop
-  powerManagement.powertop.enable = true;
+# powerManagement.powertop.enable = true;
 
   time.hardwareClockInLocalTime = true;
 
