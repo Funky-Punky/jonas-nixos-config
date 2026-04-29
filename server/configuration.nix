@@ -16,6 +16,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelParams = [ "nomodeset" ];
 
   time.hardwareClockInLocalTime = true;
 
@@ -65,12 +66,12 @@
     tcpdump
   ];
   
-  powerManagement.enable = true;
-  powerManagement.powertop.enable = true;
-  powerManagement.cpuFreqGovernor = "powersave";
-  powerManagement.resumeCommands = ''
-    echo "System resumed"
-  '';
+#  powerManagement.enable = true;
+#  powerManagement.powertop.enable = true;
+#  powerManagement.cpuFreqGovernor = "powersave";
+#  powerManagement.resumeCommands = ''
+#    echo "System resumed"
+#  '';
 
 
   # Allow unfree packages
