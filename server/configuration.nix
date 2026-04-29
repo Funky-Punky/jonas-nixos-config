@@ -24,6 +24,7 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   
   virtualisation.docker.daemon.settings.ipv6 = true;
+  virtualisation.docker.daemon.settings.ip6tables = true;
   virtualisation.docker.daemon.settings.fixed-cidr-v6 = "fd00::/80";
   
 
