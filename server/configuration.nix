@@ -16,7 +16,25 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = [ "nomodeset" ];
+# boot.kernelParams = [ "nomodeset" ];
+
+# 1. nomodeset ENTFERNEN (wichtig für Power Management)
+  boot.kernelParams = [ 
+    "consoleblank=60"       # Schaltet den Monitor-Output nach 60s Idle aus
+    "amdgpu.runpm=1"        # Erzwingt aggressives Runtime Power Management für die GPU
+    "amdgpu.dc=1"           # Aktiviert Display Core (nötig für tiefere Sleep States)
+#"video=HDMI-A-1:d"      # Optional: Deaktiviert HDMI komplett (falls vorhanden)
+#    "video=DP-1:d"          # Optional: Deaktiviert DisplayPort komplett
+  ];
+
+  # 2. AMDGPU Treiber früh laden, damit er die Hardware kontrolliert
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  
+  # 3. Firmware für die Vega-Grafik bereitstellen
+  hardware.enableRedistributableFirmware = true;
+
+  # 4. Automatisches Stromsparen via Powertop
+  powerManagement.powertop.enable = true;
 
   time.hardwareClockInLocalTime = true;
 
