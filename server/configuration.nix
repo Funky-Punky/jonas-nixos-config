@@ -21,6 +21,22 @@
 
   networking.hostName = "server-nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  
+  virtualisation.docker.daemon.settings.ipv6 = true;
+  virtualisation.docker.daemon.settings.fixed-cidr-v6 = "fd00::/80";
+  
+
+  systemd.network.networks."eno1" = {
+    matchConfig.Name = "eno1";
+
+    networkConfig = {
+      IPv6AcceptRA = true;
+    };
+
+    ipv6AcceptRAConfig = {
+      UseStablePrivacyAddress = true;
+    };
+  };
 
 
   # Configure network proxy if necessary
@@ -46,6 +62,7 @@
 
   environment.systemPackages = with pkgs; [
     sysbench
+    tcpdump
   ];
   
   powerManagement.enable = true;
