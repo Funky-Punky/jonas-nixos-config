@@ -23,7 +23,7 @@
     "consoleblank=60"       # Schaltet den Monitor-Output nach 60s Idle aus
     "amdgpu.runpm=1"        # Erzwingt aggressives Runtime Power Management für die GPU
     "amdgpu.dc=1"           # Aktiviert Display Core (nötig für tiefere Sleep States)
-#"video=HDMI-A-1:d"      # Optional: Deaktiviert HDMI komplett (falls vorhanden)
+#    "video=HDMI-A-1:d"      # Optional: Deaktiviert HDMI komplett (falls vorhanden)
 #    "video=DP-1:d"          # Optional: Deaktiviert DisplayPort komplett
   ];
 
