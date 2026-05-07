@@ -23,7 +23,10 @@
     xournalpp
     cava
     libreoffice-qt6-fresh
+    kdePackages.filelight
+    gparted
     playerctl
+    teams-for-linux
     pavucontrol
     chromium
     vlc
