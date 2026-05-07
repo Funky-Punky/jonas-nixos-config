@@ -15,6 +15,7 @@
           --set QT_QPA_PLATFORM xcb
       '';
     })
+    nwg-displays
     signal-desktop
     mendeley
     hyprshot
@@ -32,6 +33,7 @@
     helvum
     discord
     jetbrains.pycharm
+    jetbrains.datagrip
     qimgv
   ];
 

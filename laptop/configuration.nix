@@ -14,6 +14,26 @@
     ../shared/hyprland/default.nix
   ];
 
+  # boot.kernelParams = [ 
+  #   "radeon.si_support=0" 
+  #   "amdgpu.si_support=1" 
+  #   "radeon.cik_support=0" 
+  #   "amdgpu.cik_support=1" 
+  # ];
+
+  # services.xserver.videoDrivers = [ "amdgpu" ];
+
+  # hardware.graphics = {
+  #   enable = true;
+  #   extraPackages = with pkgs; [
+  #     intel-media-driver # Für die Intel i530
+  #     intel-vaapi-driver
+  #     libva-vdpau-driver
+  #     libvdpau-va-gl
+  #   ];
+  # };
+
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
