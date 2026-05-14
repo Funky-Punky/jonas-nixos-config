@@ -15,6 +15,7 @@
           --set QT_QPA_PLATFORM xcb
       '';
     })
+    nwg-displays
     signal-desktop
     mendeley
     hyprshot
@@ -22,7 +23,10 @@
     xournalpp
     cava
     libreoffice-qt6-fresh
+    kdePackages.filelight
+    gparted
     playerctl
+    teams-for-linux
     pavucontrol
     chromium
     vlc
@@ -32,6 +36,7 @@
     helvum
     discord
     jetbrains.pycharm
+    jetbrains.datagrip
     qimgv
   ];
 
