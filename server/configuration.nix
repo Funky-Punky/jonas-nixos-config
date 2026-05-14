@@ -18,6 +18,19 @@
   boot.loader.efi.canTouchEfiVariables = true;
 # boot.kernelParams = [ "nomodeset" ];
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc
+    zlib
+    fuse3
+    icu
+    nss
+    openssl
+    curl
+    expat
+    # Füge hier weitere Libraries hinzu, falls Extensions meckern
+  ];
+
 # 1. nomodeset ENTFERNEN (wichtig für Power Management)
 #  boot.kernelParams = [ 
 #    "consoleblank=60"       # Schaltet den Monitor-Output nach 60s Idle aus
