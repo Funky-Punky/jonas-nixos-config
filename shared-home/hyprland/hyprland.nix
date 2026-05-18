@@ -58,6 +58,7 @@
       # Or execute your favorite apps at launch like this:
 
       "exec-once" = [
+        "systemctl --user start hyprpolkitagent"
       ];
 
       #############################

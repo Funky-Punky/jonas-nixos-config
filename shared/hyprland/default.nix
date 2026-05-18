@@ -38,6 +38,7 @@
     jetbrains.pycharm
     jetbrains.datagrip
     qimgv
+    hyprpolkitagent
   ];
 
   programs.firefox.enable = true;
@@ -59,5 +60,6 @@
 
   systemd.services.display-manager.path = [ pkgs.uwsm ];
   security.pam.services.hyprlock = {};
+  security.polkit.enable = true;
 
 }

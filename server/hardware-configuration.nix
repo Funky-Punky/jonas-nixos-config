@@ -24,6 +24,11 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  fileSystems."/mnt/flea" =
+    { device = "/dev/disk/by-uuid/5b17bcd3-f532-4fbc-b35b-6e9baec3e173";
+      fsType = "ext4";
+    };
+
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

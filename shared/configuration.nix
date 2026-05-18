@@ -27,8 +27,8 @@
     helix
     rustc
     busybox
+    smartmontools
   ];
-
   # # fonts:
   # fonts.packages = with pkgs; [ nerd-fonts.hack nerd-fonts.lekton ];
 
