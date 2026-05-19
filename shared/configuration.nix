@@ -28,6 +28,7 @@
     rustc
     busybox
     smartmontools
+    opentofu
   ];
   # # fonts:
   # fonts.packages = with pkgs; [ nerd-fonts.hack nerd-fonts.lekton ];
