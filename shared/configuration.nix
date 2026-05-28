@@ -28,6 +28,8 @@
     rustc
     busybox
     smartmontools
+    htop
+    bmon
   ];
   # # fonts:
   # fonts.packages = with pkgs; [ nerd-fonts.hack nerd-fonts.lekton ];
