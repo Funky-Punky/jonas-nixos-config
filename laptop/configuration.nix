@@ -12,7 +12,34 @@
 
     ../shared/configuration.nix
     ../shared/hyprland/default.nix
+    inputs.xremap-flake.nixosModules.default
   ];
+
+  services.xremap = {
+    enable = true;
+    # serviceMode = "user";
+    # userName = "jonas";
+    withHypr = true;
+    config.modmap = [
+      {
+        name = "Global";
+        remap = {"CapsLock" = "Esc"; };
+      }
+    ];
+
+    # Keymap for key combo rebinds
+    config.keymap = [
+      {
+        name = "Vim navigation";
+        remap = { 
+          "Super-k" = "up";
+          "Super-j" = "down";
+          "Super-h" = "left";
+          "Super-l" = "right";
+        };
+      }
+    ];
+  };
 
   # boot.kernelParams = [ 
   #   "radeon.si_support=0" 
