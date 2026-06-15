@@ -20,9 +20,8 @@
   environment.systemPackages = with pkgs; [
     texliveFull
     brightnessctl
-    light
     wget
-    neofetch
+    fastfetch
     pulseaudio
     helix
     rustc

@@ -46,7 +46,7 @@
     alacritty
     rofi
     kdePackages.dolphin
-    helvum
+    crosspipe
     discord
     jetbrains.pycharm
     jetbrains.datagrip
