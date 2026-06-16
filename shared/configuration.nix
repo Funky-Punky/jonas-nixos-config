@@ -31,7 +31,9 @@
     htop
     bmon
     opentofu
-    jq
+    iperf3
+    nftables
+    htop
   ];
   # # fonts:
   # fonts.packages = with pkgs; [ nerd-fonts.hack nerd-fonts.lekton ];
