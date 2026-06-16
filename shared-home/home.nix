@@ -59,7 +59,7 @@
   };
 
   programs.git.enable = true;
-  programs.git.userName = "Honas";
-  programs.git.userEmail = "jonas.reinstaedtler@web.de";
+  programs.git.settings.user.name = "Honas";
+  programs.git.settings.user.email = "jonas.reinstaedtler@web.de";
 
 }

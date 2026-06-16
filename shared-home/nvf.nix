@@ -46,7 +46,7 @@
         nix.enable = true;
         markdown.enable = true;
         rust.enable = true;
-        rust.crates.enable = true;
+        rust.extensions.crates-nvim.enable = true;
       };
 
       vim.spellcheck = {

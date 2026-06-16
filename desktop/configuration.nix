@@ -17,12 +17,17 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  #boot.supportedFilesystems = [ "ntfs" ];
 
   time.hardwareClockInLocalTime = true;
 
   networking.hostName = "desktop-nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  #networking.firewall = {
+  #  enable = true;
+  #  allowedTCPPorts = [ 5201 3007 ];
+  #};
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

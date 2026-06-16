@@ -20,15 +20,19 @@
   environment.systemPackages = with pkgs; [
     texliveFull
     brightnessctl
-    light
     wget
-    neofetch
+    fastfetch
     pulseaudio
     helix
     rustc
     busybox
     smartmontools
+    htop
+    bmon
     opentofu
+    iperf3
+    nftables
+    htop
   ];
   # # fonts:
   # fonts.packages = with pkgs; [ nerd-fonts.hack nerd-fonts.lekton ];
