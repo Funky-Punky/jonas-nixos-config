@@ -33,6 +33,8 @@
     iperf3
     nftables
     htop
+    eduvpn-client
+    gurobi
   ];
   # # fonts:
   # fonts.packages = with pkgs; [ nerd-fonts.hack nerd-fonts.lekton ];
