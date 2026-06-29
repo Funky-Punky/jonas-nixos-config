@@ -62,7 +62,15 @@
   virtualisation.docker.daemon.settings.ipv6 = true;
   virtualisation.docker.daemon.settings.ip6tables = true;
   virtualisation.docker.daemon.settings.fixed-cidr-v6 = "fd00::/80";
+  # virtualisation.docker.daemon.settings.mtu = 1360;
+
+  # Enable TCP BBR
+  # boot.kernelModules = [ "tcp_bbr" ];
   
+  #boot.kernel.sysctl = {
+  #  "net.core.default_qdisc" = "fq";
+  #  "net.ipv4.tcp_congestion_control" = "bbr";
+  #}; 
 
   systemd.network.networks."eno1" = {
     matchConfig.Name = "eno1";
@@ -101,6 +109,8 @@
   environment.systemPackages = with pkgs; [
     sysbench
     tcpdump
+    ethtool
+    iperf3
   ];
   
 #  powerManagement.enable = true;

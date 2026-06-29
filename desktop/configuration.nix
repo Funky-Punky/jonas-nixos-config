@@ -17,19 +17,37 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  #boot.supportedFilesystems = [ "ntfs" ];
 
   time.hardwareClockInLocalTime = true;
 
   networking.hostName = "desktop-nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  #networking.firewall = {
+  #  enable = true;
+  #  allowedTCPPorts = [ 5201 3007 ];
+  #};
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.hostId = "209ee754";
+  networking.networkmanager = {
+    enable = true;
+ 
+    plugins = with pkgs; [
+        networkmanager-openvpn
+    ];
+  };
+  
+  networking.firewall = {
+    enable = true;
+    # Disable Reverse Path Filtering to allow traffic to flow over the VPN tunnel
+    checkReversePath = false; 
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jonas = {
