@@ -111,6 +111,8 @@
     tcpdump
     ethtool
     iperf3
+    restic
+    rclone
   ];
   
 #  powerManagement.enable = true;
