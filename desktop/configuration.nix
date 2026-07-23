@@ -12,6 +12,7 @@
     ./desktop-audio.nix
     ../shared/configuration.nix
     ../shared/hyprland/default.nix
+    ../shared/hyprland/davinci.nix
   ];
 
   # Bootloader.
