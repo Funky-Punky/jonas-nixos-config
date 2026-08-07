@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland.url = "github:hyprwm/Hyprland";
     nvf.url = "github:notashelf/nvf";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
@@ -31,7 +31,6 @@
       url = "github:abenz1267/walker";
       inputs.elephant.follows = "elephant";
     };
-
   };
 
   outputs =
