@@ -1,9 +1,20 @@
-{ config, lib, pkgs, ... }:
+{ 
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
+{ 
 
-{
+  imports = [
+    # inputs.nixpkgs-unstable.waybar
+  ];
+
   programs.waybar = {
 
     enable = true;
+    package = inputs.waybar.packages.${pkgs.system}.default;
     systemd = {
       enable = true; # disable it,autostart it in hyprland conf
       targets = [  "graphical-session.target" ];
