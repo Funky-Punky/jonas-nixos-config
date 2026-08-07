@@ -31,6 +31,8 @@
     profiles.default.extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
       hashicorp.terraform
+      # asvetliakov.vscode-neovim
+      vscodevim.vim
     ];
   };
 
