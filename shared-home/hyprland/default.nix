@@ -1,11 +1,13 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 {
   imports = [
     ./hyprland.nix
     ./waybar.nix
+    inputs.walker.homeManagerModules.default
   ];
 
   home.packages = with pkgs; [
@@ -13,38 +15,36 @@
     hyprlock
   ];
   
-  wayland.windowManager.hyprland.configType = "hyprlang";
-
-
   services.swaync = {
     enable = true;
   };
 
+  programs.walker.enable=true;
+  programs.walker.runAsService = true;
+
   
-   programs.vscode = {
-     enable = true;
-     argvSettings = {
-      disable-hardware-acceleration = true;
-     };
-     profiles.default.extensions = with pkgs.vscode-extensions; [
-       jnoortheen.nix-ide
-       hashicorp.terraform
+  programs.vscode = {
+    enable = true;
+    argvSettings = {
+     disable-hardware-acceleration = true;
+    };
+    profiles.default.extensions = with pkgs.vscode-extensions; [
+      jnoortheen.nix-ide
+      hashicorp.terraform
     ];
-   };
+  };
 
 
   services.hyprpaper = {
     enable = true;
     settings = {
-      ipc = "on";
-      splash = false;
-      # splash_offset = 2.0;
-
-      preload =
-        [ "/home/jonas/jonas-nixos-config/shared-home/hyprland/walls/wallhaven-jxgd25.jpg" ];
-
+      # splash = false;
       wallpaper = [
-        ",/home/jonas/jonas-nixos-config/shared-home/hyprland/walls/wallhaven-jxgd25.jpg"
+        {
+          # fit_mode = "tile";
+          monitor = "";
+          path = "/home/jonas/jonas-nixos-config/shared-home/hyprland/walls/moon-palm-purple.jpg";
+        }
       ];
     };
   };

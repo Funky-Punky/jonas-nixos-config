@@ -35,6 +35,7 @@
     htop
     eduvpn-client
     gurobi
+    popsicle
   ];
   # # fonts:
   # fonts.packages = with pkgs; [ nerd-fonts.hack nerd-fonts.lekton ];
