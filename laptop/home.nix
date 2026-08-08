@@ -8,7 +8,7 @@
   imports = [
     ../shared-home/home.nix
     ../shared-home/hyprland/default.nix
-    ./hyprland/beamertest.nix
+    ./hyprland/external-screens.nix
     inputs.spicetify-nix.homeManagerModules.default
   ];
 
