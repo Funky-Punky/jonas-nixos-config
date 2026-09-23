@@ -8,6 +8,7 @@
   imports = [
     ../shared-home/home.nix
     ../shared-home/hyprland/default.nix
+    ./hyprland/external-screens.nix
     inputs.spicetify-nix.homeManagerModules.default
   ];
 
@@ -24,7 +25,7 @@
     {
       output = "eDP-1";
       mode = "1920x1080";
-      position = "auto";
+      position = "0x0";
       scale = 1;
     }
   ];

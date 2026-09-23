@@ -114,7 +114,34 @@
     restic
     rclone
   ];
-  
+
+  systemd.timers."jonas-backup" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = [
+        "05:00:00"
+      ];
+      Unit = "jonas-backup.service";
+    };
+  };
+
+  systemd.services."jonas-backup" = {
+    path = [
+      pkgs.docker
+      pkgs.mount
+      pkgs.umount
+      pkgs.curl
+    ];
+    script = ''
+      set -eu
+      /home/jonas/homeserver-setup/backrest/perform-backup.sh
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
+    };
+  };
+
 #  powerManagement.enable = true;
 #  powerManagement.powertop.enable = true;
 #  powerManagement.cpuFreqGovernor = "powersave";
