@@ -29,15 +29,15 @@
 
     # Keymap for key combo rebinds
     config.keymap = [
-      {
-        name = "Vim navigation";
-        remap = { 
-          "Super-k" = "up";
-          "Super-j" = "down";
-          "Super-h" = "left";
-          "Super-l" = "right";
-        };
-      }
+      # {
+      #   name = "Vim navigation";
+      #   remap = { 
+      #     "Super-k" = "up";
+      #     "Super-j" = "down";
+      #     "Super-h" = "left";
+      #     "Super-l" = "right";
+      #   };
+      # }
     ];
   };
 

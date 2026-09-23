@@ -178,13 +178,13 @@ in
         # { leaf = "zoomFactor"; enabled = true; speed = 7; bezier = "quick"; }
       ];
 
-      window_rule = [{
-        match = {
-          class = "^(kitty)$";
-          title = "^(bw-unlock)$";
-        };
-        float = true;
-      }];
+      # window_rule = [{
+      #   match = {
+      #     class = "^(kitty)$";
+      #     title = "^(bw-unlock)$";
+      #   };
+      #   float = true;
+      # }];
 
       # on = {
       #   _args = [
@@ -220,7 +220,7 @@ in
         (bind "SUPER + T" dsp.float)
         (bind "SUPER + F" dsp.fullscreen)
         (bind "SUPER + P" dsp.pseudo)
-        (bind "SUPER + J" (dsp.layout "togglesplit"))
+        # (bind "SUPER + J" (dsp.layout "togglesplit"))
 
         # Focus
         (bind "SUPER + h" (dsp.focus "left"))

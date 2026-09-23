@@ -10,64 +10,45 @@
 
   programs.nvf = {
     enable = true;
+
     settings = {
+      vim = {
+        viAlias = true;
+        vimAlias = true;
+        # useSystemClipboard = true;
+        clipboard.providers.xclip.enable = true;
+        undoFile.enable = true;
 
-      vim.viAlias = false;
-      vim.vimAlias = true;
+        lsp.formatOnSave = true;
+        treesitter.enable = true;
 
-      vim.options.shiftwidth = 2;
-      #vim.visuals.nvim-cursorline.enable = true;
-      #options.cursorlineopt = "both";
+        languages = {
+          enableTreesitter = true;
+          enableFormat = true;
 
-      vim.diagnostics.enable = true;
-      vim.diagnostics.config.virtual_text = true;
+          nix.enable = true;
+          nix.lsp.enable = true;
 
-      #vim.theme = {
-      #  enable = true;
-      #  name = "onedark";
-      #  style = "deep";
-      #  transparent = true;
-      #};
+          markdown.enable = true;
+          markdown.lsp.enable = true;
 
-      vim.statusline.lualine.enable = true;
-      #vim.statusline.lualine.theme = "onedark";
-      vim.autocomplete.nvim-cmp.enable = true;
+          bash.enable = true;
+          bash.lsp.enable = true;
+        };
 
-      vim.lsp = {
-        enable = true;
-        lspkind.enable = true;
-        lspsaga.enable = true;
-        otter-nvim.enable = true;
+        autocomplete.nvim-cmp.enable = true;
+        autopairs.nvim-autopairs.enable = true;
+
+        telescope.enable = true;
+        statusline.lualine.enable = true;
+        git.enable = true;
+
+        # theme = {
+        #   enable = true;
+        #   name = "catppuccin";
+        #   style = "mocha";
+        # };
       };
-
-      vim.languages = {
-        enableTreesitter = true;
-
-        nix.enable = true;
-        markdown.enable = true;
-        rust.enable = true;
-        rust.extensions.crates-nvim.enable = true;
-      };
-
-      vim.spellcheck = {
-        enable = true;
-        programmingWordlist.enable = true;
-      };
-
-      vim.keymaps = [
-        {
-          key = "<leader>ca";
-          mode = "n";
-          action = "<cmd>Lspsaga code_action<CR>";
-          desc = "Show Code Actions";
-        }
-        {
-          key = "<leader>d";
-          mode = "n";
-          action = "<cmd>lua vim.diagnostic.config({ virtual_text = not vim.diagnostic.config().virtual_text })<CR>";
-          desc = "Toggle Inline code errors";
-        }
-      ];
     };
   };
 }
