@@ -102,7 +102,7 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.jonas = ./psa/home.nix;
+            home-manager.users.ge65gom = ./psa/home.nix;
           }
         ];
       };

@@ -10,7 +10,7 @@
   ];
 
   home.username = lib.mkForce "ge65gom";
-  #home.homeDirectory = "/home/ge65gom";
+  home.homeDirectory = "/home/ge65gom";
   home.stateVersion = "25.05";
 
   programs.bash.shellAliases = {
