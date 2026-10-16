@@ -46,7 +46,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ge65gom = {
     isNormalUser = true;
-    description = "jonas";
+    description = "ge65gom";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -55,7 +55,7 @@
     ];
   };
 
-  nix.settings.trusted-users = [ "root" "jonas" ];
+  nix.settings.trusted-users = [ "root" "ge65gom" ];
 
   environment.systemPackages = with pkgs; [
     sysbench
