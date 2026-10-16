@@ -131,10 +131,11 @@
       pkgs.mount
       pkgs.umount
       pkgs.curl
+      pkgs.libuuid
     ];
     script = ''
       set -eu
-      /home/jonas/homeserver-setup/backrest/perform-backup.sh
+      /home/jonas/homeserver-setup/backrest/perform-backup.sh regular
     '';
     serviceConfig = {
       Type = "oneshot";
