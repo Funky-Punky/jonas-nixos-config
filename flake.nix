@@ -91,6 +91,21 @@
           }
         ];
       };
+      nixosConfigurations.psa-nixos = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./psa/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.ge65gom = ./psa/home.nix;
+          }
+        ];
+      };
 
       nixosConfigurations.work-nix = nixpkgs.lib.nixosSystem {
         inherit system;
