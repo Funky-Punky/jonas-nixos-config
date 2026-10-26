@@ -24,5 +24,12 @@
       position = "0x-1200";
       scale = 1;
     }
+    { 
+      # right window screen at ZEI
+      output = "desc:Dell Inc. DELL U2412M 0FFXD3CH20ES";
+      mode = "1920x1200";
+      position = "0x-1200";
+      scale = 1;
+    }
   ];
 }
